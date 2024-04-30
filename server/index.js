@@ -1,4 +1,4 @@
-const PORT = 8000
+// const PORT = process.
 const { MongoClient, MONGO_CLIENT_EVENTS } = require('mongodb')
 const express = require('express')
 //generate a unique id for user
@@ -247,4 +247,4 @@ app.put('/user', async (req, res) => {
         await client.close()
     }
 })
-app.listen(PORT, () => console.log('Server running on PORT' + PORT))
+app.listen(process.env.PORT || 8000, () => console.log('Server running on PORT'))
