@@ -1,4 +1,3 @@
-// const PORT = process.
 const { MongoClient, MONGO_CLIENT_EVENTS } = require('mongodb')
 const express = require('express')
 //generate a unique id for user

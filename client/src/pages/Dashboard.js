@@ -19,7 +19,7 @@ const Dashboard =()=>{
 
     const getuser = async() =>{
         try{
-            const response = await axios.get('http://localhost:8000/user', {
+            const response = await axios.get(`http://localhost:8000/user`, {
                 params: {userId}
             })
             setUser(response.data)
@@ -34,7 +34,7 @@ const Dashboard =()=>{
     const getSeekuser = async(seek) =>
     {
         try{
-            const response = await axios.get('http://localhost:8000/seek-user', {
+            const response = await axios.get('http://localhost:8000/seek-user',{
                 params:{seeked: seek}
             })
             setSeekusers(response.data) 
@@ -53,7 +53,7 @@ const Dashboard =()=>{
     const updateMatches = async(matchedUserId) =>
     {
         try{
-            await axios.put('http://localhost:8000/addmatch',{
+            await axios.put(`http://localhost:8000/addmatch`,{
                 userId,
                 matchedUserId
             }) 

@@ -30,7 +30,7 @@ const Onboard = () => {
         e.preventDefault()
 
         try {
-            const response = await axios.put('http://localhost:8000/user', { formData })
+            const response = await axios.put(`http://localhost:8000/user`, { formData })
             const sucess = response.status === 200
 
             if (sucess) navigate('/dashboard')

@@ -12,7 +12,7 @@ const ChatDisplay = ({user, clickedUser}) => {
     const getUserMessages = async()=>
     {
         try{
-            const response = await axios.get('http://localhost:8000/messages',{
+            const response = await axios.get(`http://localhost:8000/messages`,{
                 params: {userId: userId, correspondingUserId: clickedUserId}
             })
             setuserMessages(response.data)
@@ -24,7 +24,7 @@ const ChatDisplay = ({user, clickedUser}) => {
     const getClickedUserMessages = async() =>
     {
         try{
-            const response = await axios.get('http://localhost:8000/messages',{
+            const response = await axios.get(`http://localhost:8000/messages`,{
                 params: {userId: clickedUserId, correspondingUserId: userId}
             })
             setClickedUserMessages(response.data)
